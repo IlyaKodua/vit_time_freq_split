@@ -65,7 +65,7 @@ class ESC_Dataset(Dataset):
         fbank = torchaudio.compliance.kaldi.fbank(wav, htk_compat=True, sample_frequency=self.sr, use_energy=False,
                                             window_type='hanning', num_mel_bins=128, dither=0.0, frame_length = 1024/self.sr*1000,
                                             frame_shift=498/self.sr*1000 )[None,:,:]
-        target = torch.from_numpy(np.array([self.dataset[p]["target"]]))[:,0]
+        target = torch.from_numpy(np.array([self.dataset[p]["target"]]))
         return fbank, target
 
     def __len__(self):
