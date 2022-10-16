@@ -26,7 +26,7 @@ class ESC_Dataset(Dataset):
         self.esc_fold = esc_fold
         self.eval_mode = eval_mode
         self.sr = 32000
-        random.seed(42)
+        random.seed(1)
         if self.eval_mode:
             self.dataset = self.dataset[self.esc_fold]
         else:
